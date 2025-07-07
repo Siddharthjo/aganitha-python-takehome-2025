@@ -1,0 +1,37 @@
+[project]
+name = "aganitha-pubmed-tool"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "Siddharth Hiriyan",email = "siddharthjo2003@gmail.com"}
+]
+readme = "README.md"
+requires-python = "^3.10"
+dependencies = [
+    "typer[all] (>=0.16.0,<0.17.0)",
+    "pandas (>=2.3.0,<3.0.0)",
+    "requests (>=2.32.4,<3.0.0)"
+]
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry]
+name = "aganitha_pubmed_tool"
+version = "0.1.0"
+description = "CLI tool to fetch PubMed papers with non-academic authors"
+authors = ["Siddharth Hiriyan Joghee <siddharthjo2003@gmail.com>"]
+
+packages = [
+    { include = "papers" }
+]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+pandas = "*"
+requests = "*"
+typer = { extras = ["all"], version = "*" }
+
+[tool.poetry.scripts]
+get-papers-list = "cli:app"
